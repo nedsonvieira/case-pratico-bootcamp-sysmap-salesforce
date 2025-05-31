@@ -1,0 +1,12 @@
+.container {
+    font-weight: bolder;
+    text-align: center;
+    margin: 2em 4em;
+}
+
+.timer {
+    font-size: var(--slds-c-badge-font-size, 20px);
+    padding: 1em 2em;
+    margin-top: 1em;
+    border-radius: var(--slds-c-badge-radius-border, 10px);
+}

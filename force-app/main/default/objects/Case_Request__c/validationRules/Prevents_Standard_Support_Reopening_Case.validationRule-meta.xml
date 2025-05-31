@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevents_Standard_Support_Reopening_Case</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ $Profile.Name = &quot;Support Standard&quot;,
+ ISPICKVAL(PRIORVALUE( Status__c ),&quot;Closed&quot;)
+)</errorConditionFormula>
+    <errorMessage>Closed cases not possible to open.</errorMessage>
+</ValidationRule>
