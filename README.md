@@ -5,7 +5,7 @@
 
 ## 1. Visão Geral
 
-Este repositório contém a implementação do **Case Request**, um objeto customizado desenvolvido para a gestão estruturada e eficiente de pedidos de suporte no Salesforce. O projeto foi realizado como parte do **Desafio TechCare – Case Prático (Bootcamp 2025)**, dentro do **Programa de Trainee Sysmap de Excelência Salesforce – 6ª edição**, conduzido entre março e junho de 2025.
+Este repositório contém a implementação do **Case Request**, um objeto personalizado desenvolvido para a gestão estruturada e eficiente de pedidos de suporte no Salesforce. O projeto foi realizado como parte do **Desafio TechCare – Case Prático (Bootcamp 2025)**, dentro do **Programa de Trainee Sysmap de Excelência Salesforce – 6ª edição**, conduzido entre março e junho de 2025.
 
   
 
