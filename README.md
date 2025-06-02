@@ -366,7 +366,7 @@ GET /Case_Request__c/5008c00001A1B2C3D
 
   
 
-##### 1. **SLA Countdown Timer**
+#### 1. **SLA Countdown Timer**
 
    Este **Lightning Web Component (LWC)** exibe um **contador regressivo** baseado no prazo (`SLA_Deadline__c`) de uma requisição de caso (`Case_Request__c`). Ele verifica o status do caso e interrompe o timer quando ele é **"Closed"**.
 
@@ -387,7 +387,7 @@ GET /Case_Request__c/5008c00001A1B2C3D
 
   
 
-##### 2. **Botão "Reopen Case"**
+#### 2. **Botão "Reopen Case"**
 
    Este **Lightning Web Component (LWC)** permite que os usuários **reabram uma requisição de caso (`Case_Request__c`)** caso ela tenha sido fechada. O componente verifica o status do caso antes de chamar uma **classe Apex** que altera o status para "In Progress" e inicia um **Flow** automaticamente.
 
