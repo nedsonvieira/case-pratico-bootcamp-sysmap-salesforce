@@ -322,7 +322,7 @@ GET /Case_Request__c/5008c00001A1B2C3D
 { 
 	"createdDate": "2025-05-30T13:45:23Z", 
 	"slaDeadline": "2025-06-05T00:00:00Z", 
-	"status": "Em andamento", 
+	"status": "In Progress", 
 	"slaMet": true, 
 	"timeClosed": "2025-06-03T16:30:00Z" 
 }
