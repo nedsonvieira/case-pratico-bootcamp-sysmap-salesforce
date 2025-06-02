@@ -370,20 +370,20 @@ GET /Case_Request__c/5008c00001A1B2C3D
 
    Este **Lightning Web Component (LWC)** exibe um **contador regressivo** baseado no prazo (`SLA_Deadline__c`) de uma requisição de caso (`Case_Request__c`). Ele verifica o status do caso e interrompe o timer quando ele é **"Closed"**.
 
-	**Arquivos do Componente**
+**Arquivos do Componente**
+ 
+ - **JS:** `slaDeadlineTimer.js`
+ - **HTML:** `slaDeadlineTimer.html`
 
-	- **JS:** `slaDeadlineTimer.js`
-	- **HTML:** `slaDeadlineTimer.html`
+**Funcionalidades**
 
-	**Funcionalidades**
+✔ Obtém os campos `SLA_Deadline__c` e `Status__c` de um registro `Case_Request__c`.
+✔ Exibe um **timer regressivo** até o prazo final (`SLA_Deadline__c`).
+✔ Aplica **estilos visuais** com `slds-theme_*` dependendo do tempo restante:
 
-	✔ Obtém os campos `SLA_Deadline__c` e `Status__c` de um registro `Case_Request__c`.
-	✔ Exibe um **timer regressivo** até o prazo final (`SLA_Deadline__c`).
-	✔ Aplica **estilos visuais** com `slds-theme_*` dependendo do tempo restante:
-
-	- **Verde** (`slds-theme_success`) para mais de 2 horas restantes.
-	- **Amarelo** (`slds-theme_warning`) para menos de 2 horas.
-	- **Vermelho** (`slds-theme_error`) quando o tempo expira.
+- **Verde** (`slds-theme_success`) para mais de 2 horas restantes.
+- **Amarelo** (`slds-theme_warning`) para menos de 2 horas.
+- **Vermelho** (`slds-theme_error`) quando o tempo expira.
 
   
 
@@ -391,19 +391,19 @@ GET /Case_Request__c/5008c00001A1B2C3D
 
    Este **Lightning Web Component (LWC)** permite que os usuários **reabram uma requisição de caso (`Case_Request__c`)** caso ela tenha sido fechada. O componente verifica o status do caso antes de chamar uma **classe Apex** que altera o status para "In Progress" e inicia um **Flow** automaticamente.
 
-	**Arquivos do Componente**
+**Arquivos do Componente**
 
-	- **JS:** `reopenCaseRequest.js`
-	- **HTML:** `reopenCaseRequest.html`
-	- **Apex:** `ReopenCaseRequest.cls`
+- **JS:** `reopenCaseRequest.js`
+- **HTML:** `reopenCaseRequest.html`
+- **Apex:** `ReopenCaseRequest.cls`
 
-	**Funcionalidades**
+**Funcionalidades**
 
-	✔ Obtém o status do caso (`Status__c`) via `@wire(getRecord)`.  
-	✔ Permite reabrir o caso **somente se ele estiver fechado**.  
-	✔ Chama um método **Apex (`reopenCase`)** para atualizar o status para `"In Progress"`.  
-	✔ Dispara um **Flow automático** para configurar um novo SLA.  
-	✔ Mostra mensagens de sucesso ou erro utilizando `ShowToastEvent`.
+✔ Obtém o status do caso (`Status__c`) via `@wire(getRecord)`.  
+✔ Permite reabrir o caso **somente se ele estiver fechado**.  
+✔ Chama um método **Apex (`reopenCase`)** para atualizar o status para `"In Progress"`.  
+✔ Dispara um **Flow automático** para configurar um novo SLA.  
+✔ Mostra mensagens de sucesso ou erro utilizando `ShowToastEvent`.
 
 
 ---
