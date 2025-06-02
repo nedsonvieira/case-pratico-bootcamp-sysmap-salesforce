@@ -378,7 +378,9 @@ GET /Case_Request__c/5008c00001A1B2C3D
 **Funcionalidades**
 
 ✔ Obtém os campos `SLA_Deadline__c` e `Status__c` de um registro `Case_Request__c`.
+
 ✔ Exibe um **timer regressivo** até o prazo final (`SLA_Deadline__c`).
+
 ✔ Aplica **estilos visuais** com `slds-theme_*` dependendo do tempo restante:
 
 - **Verde** (`slds-theme_success`) para mais de 2 horas restantes.
@@ -399,10 +401,14 @@ GET /Case_Request__c/5008c00001A1B2C3D
 
 **Funcionalidades**
 
-✔ Obtém o status do caso (`Status__c`) via `@wire(getRecord)`.  
+✔ Obtém o status do caso (`Status__c`) via `@wire(getRecord)`. 
+
 ✔ Permite reabrir o caso **somente se ele estiver fechado**.  
-✔ Chama um método **Apex (`reopenCase`)** para atualizar o status para `"In Progress"`.  
+
+✔ Chama um método **Apex (`reopenCase`)** para atualizar o status para `"In Progress"`. 
+
 ✔ Dispara um **Flow automático** para configurar um novo SLA.  
+
 ✔ Mostra mensagens de sucesso ou erro utilizando `ShowToastEvent`.
 
 
