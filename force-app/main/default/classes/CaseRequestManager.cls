@@ -2,25 +2,36 @@
 global with sharing class CaseRequestManager {
     
     @HttpGet
-    global static String getCaseRequest() {
+    global static void getCaseRequest() {
         RestRequest request = RestContext.request;
+        RestResponse response = RestContext.response;
         
         if (request == null || String.isBlank(request.requestURI)) {
-            return formatErrorResponse(400, 'Bad Request', 'Invalid request URI.');
+            
+            response.responseBody = Blob.valueOf(formatErrorResponse('Bad Request', 'Invalid request URI.'));
+            response.statusCode = 400;
+            return;
         }
         
         String caseRequestId = extractCaseRequestId(request.requestURI);
         
         if (String.isBlank(caseRequestId)) {
-            return formatErrorResponse(400, 'Bad Request', 'Case request id can\'t be null.');
+            
+            response.responseBody = Blob.valueOf(formatErrorResponse('Bad Request', 'Case request id can\'t be null.'));
+            response.statusCode = 400;
+            return;
         }
         
         try {
             Case_Request__c result = findCaseRequest(caseRequestId);
             
-            return formatSuccessResponse(result);
+            response.responseBody = Blob.valueOf(formatSuccessResponse(result));
+            response.statusCode = 200;
+            
         } catch (Exception e) {
-            return formatErrorResponse(404, 'Not Found', 'Case Request ID not found or invalid.');
+            
+            response.responseBody = Blob.valueOf(formatErrorResponse('Not Found', 'Case Request ID not found or invalid.'));
+            response.statusCode = 404;
         }
     }
     
@@ -50,9 +61,8 @@ global with sharing class CaseRequestManager {
         return JSON.serializePretty(dto);
     }
     
-    private static String formatErrorResponse(Integer statusCode, String errorMessage, String message) {
+    private static String formatErrorResponse(String errorMessage, String message) {
         return JSON.serializePretty(new Map<String, Object>{
-            'status' => statusCode,
             'error' => errorMessage,
             'message' => message
         });
